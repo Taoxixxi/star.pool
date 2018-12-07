@@ -1,0 +1,735 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+@import "ionic.globals";
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+$colors: (primary: #3d3e3f, secondary: #D3B171, danger: #000, light: #f4f4f4, dark: #222);
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+@import "ionic.theme.default";
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+@import "ionic.ionicons";
+// Fonts
+// --------------------------------------------------
+@import "roboto";
+@import "noto-sans";
+
+/******** 自定义开始 **********/
+
+
+/****** ==变量区== ******/
+
+//头高尾高
+$toolbar-background: #fff;
+$toolbar-border-color: rgba(0, 0, 0, 0);
+$toolbar-inactive-color: rgba(0, 0, 0, 0);
+$toolbar-md-height: 48px;
+$toolbar-ios-height: 48px;
+$toolbar-wp-height: 48px;
+$toolbar-md-title-font-size:18px;
+$toolbar-ios-title-font-size: 18px;
+$toolbar-wp-title-font-size: 18px;
+$toolbar-md-title-font-weight: 500;
+$toolbar-ios-title-font-weight: 500;
+$toolbar-wp-title-font-weight: 500;
+$toolbar-md-title-text-color: #3d3e3f;
+$toolbar-ios-title-text-color: #3d3e3f;
+$toolbar-wp-title-text-color: #3d3e3f;
+$tabs-md-tab-min-height:58px;
+$tabs-ios-tab-min-height:58px;
+$tabs-wp-tab-min-height:58px;
+$tabs-md-tab-font-size: 10px;
+$tabs-ios-tab-font-size: 10px;
+$tabs-wp-tab-font-size: 10px;
+$tabs-md-tab-font-size-active: 10px;
+$tabs-md-tab-icon-transform-y-active: 0px;
+//刷新
+$refresher-text-font-size: 1.4rem;
+$refresher-icon-font-size: 1.8rem;
+$refresher-text-color: #666;
+$refresher-icon-color: #555;
+$refresher-height: 80px;
+
+/** 行情图标 **/
+
+.tabbar ion-icon {
+    font-family: "iconfont" !important;
+    font-size: 28px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 3px !important;
+}
+
+.tab-button[aria-selected=true],
+.tab-button[aria-selected=true] .tab-button-icon {
+    color: #ed7135!important;
+    overflow: visible;
+}
+
+.tab-button[aria-selected=false],
+.tab-button[aria-selected=false] .tab-button-icon {
+    color: #cccccc;
+    overflow: visible;
+}
+
+.tab-button[aria-selected=true] .tab-button-text {
+    color: #ed7135
+}
+
+.tab-button[aria-selected=true] .tab-button-text {
+    color: #ccc;
+}
+
+.ion-md-icon-shouye:before {
+    content: "\e69f";
+}
+
+.ion-md-icon-shouye-outline:before {
+    content: "\e69f";
+    color: #cccccc;
+}
+
+.ion-ios-icon-shouye:before {
+    content: "\e69f";
+}
+
+.ion-ios-icon-shouye-outline:before {
+    content: "\e69f";
+    color: #cccccc;
+}
+
+.ion-md-icon-hangqing-weidianji:before {
+    content: "\e62d";
+}
+
+.ion-md-icon-hangqing-weidianji-outline:before {
+    content: "\e62d";
+    color: #cccccc;
+}
+
+.ion-ios-icon-hangqing-weidianji:before {
+    content: "\e62d";
+}
+
+.ion-ios-icon-hangqing-weidianji-outline:before {
+    content: "\e62d";
+    color: #cccccc;
+}
+
+.ion-md-icon-qianbao-weidianji:before {
+    content: "\e6a1";
+}
+
+.ion-md-icon-qianbao-weidianji-outline:before {
+    content: "\e6a1";
+    color: #cccccc;
+}
+
+.ion-ios-icon-qianbao-weidianji:before {
+    content: "\e6a1";
+}
+
+.ion-ios-icon-qianbao-weidianji-outline:before {
+    content: "\e6a1";
+    color: #cccccc;
+}
+
+.ion-md-icon-wode-yidianji:before {
+    content: "\e68f";
+}
+
+.ion-md-icon-wode-yidianji-outline:before {
+    content: "\e68f";
+    color: #cccccc;
+}
+
+.ion-ios-icon-wode-yidianji:before {
+    content: "\e68f";
+}
+
+.ion-ios-icon-wode-yidianji-outline:before {
+    content: "\e68f";
+    color: #cccccc;
+}
+
+
+/**** ==固定样式区(强制替换)== ****/
+
+// .ion-page>ion-content {
+//     background-color: #e9edf0 !important;
+// }
+
+$font-family-base: "Helvetica Neue",
+Helvetica,
+Arial,
+"PingFang SC",
+"Hiragino Sans GB",
+"Heiti SC",
+"Microsoft YaHei",
+"WenQuanYi Micro Hei",
+sans-serif;
+$font-size-root: 56.0%;
+$font-size-base: 1.4rem;
+ion-app .toolbar-background {
+    border: none !important;
+}
+
+ion-header::after {
+    background-image: none !important;
+}
+
+ion-app .tabs .tabbar {
+    border-top: 1px solid #f2f2f2;
+    background: #fff !important;
+    box-shadow: 0px 0px 5px 3px #f2f2f2;
+}
+
+ion-app .tabs .tabbar::before {
+    background: none !important;
+}
+
+ion-app .tabs .tab-button-icon {
+    font-size: 26px;
+    height: 25px !important;
+    width: 25px !important;
+    line-height: 25px !important;
+    background-size: 25px 25px !important;
+    content: '' !important;
+}
+
+ion-app .tabs .tab-button-text {
+    display: inline-block;
+    line-height: 14px;
+    height: 14px;
+    margin-top: 0px !important;
+}
+
+ion-app .tabs[tabsLayout=icon-top] .has-icon .tab-button-text {
+    color: #999;
+}
+
+ion-app .tabs .tab-button[aria-selected=true] .tab-button-text {
+    color: #ed7135;
+}
+
+ion-app .tabs .show-tabbar a:hover {
+    opacity: 1 !important;
+}
+
+ion-app .col {
+    padding: 0;
+    text-align: left;
+}
+
+ion-app .price {
+    color: red;
+}
+
+
+/******** tabs部分结束 ********/
+
+ion-app i {
+    font-style: normal;
+}
+
+ion-app .content ion-avatar {
+    min-width: 8px;
+    min-height: 8px;
+}
+
+ion-app .content ion-avatar img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+ion-app ion-header .back-button-text {
+    display: none;
+}
+
+ion-app ion-header .back-button-icon {
+    font-size: 2.0rem;
+    margin-left: 7px;
+}
+
+ion-app ion-header .ion-md-arrow-back:before,
+ion-app ion-header .ion-ios-arrow-back:before,
+ion-app ion-header .ion-wp-arrow-back:before {
+    content: "\f3cf";
+}
+
+ion-app ion-header .back-button-icon-md,
+ion-app ion-header .back-button-icon-ios,
+ion-app ion-header .back-button-icon-wp {
+    margin: -1px 0 0;
+    padding: 0;
+    min-width: 18px;
+}
+
+ion-app ion-header .bar-button-md,
+ion-app ion-header .bar-button-ios,
+ion-app ion-header .bar-button-wp {
+    margin: 0 0.2rem;
+    padding: 0 5px;
+}
+
+ion-app ion-header .back-button-md,
+ion-app ion-header .back-button-ios,
+ion-app ion-header .back-button-wp {
+    min-width: auto;
+}
+
+ion-app ion-header ion-title {
+    left: 0;
+    top: 0;
+    padding: 0 90px 1px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    pointer-events: none;
+    text-align: center;
+}
+
+//去除一些a的下划线
+ion-app a[item-link] {
+    text-decoration: none;
+}
+
+//无值时input也显示横线
+@mixin cus-input-highlight($highlight-color) {
+    border-bottom-color: $highlight-color;
+    box-shadow: inset 0 -1px 0 0 $highlight-color;
+}
+
+ion-app .item.item-input .item-inner,
+ion-app .item.item-input .item-inner {
+    @include cus-input-highlight(#ccc);
+}
+
+ion-app .list .item-input:last-child,
+ion-app .list .item-input:last-child {
+    @include cus-input-highlight(#ccc);
+    .item-inner {
+        box-shadow: none;
+    }
+}
+
+ion-app .list .item-block:first-child,
+ion-app .list .item-block:last-child,
+ion-app .item .label,
+ion-app .item.item-block,
+ion-app .item.item-block .item-inner {
+    padding: 0px;
+    margin: 0px;
+    border: 0px #f2f2f2 solid;
+}
+
+ion-app .item-md [item-right],
+ion-app .item-md [item-end],
+ion-app .item-wp [item-right],
+ion-app .item-wp [item-end],
+ion-app .item-ios [item-right],
+ion-app .item-ios [item-end] {
+    margin: 0;
+}
+
+ion-app ion-item-group {
+    background-color: #fff;
+    margin-bottom: 16px;
+}
+
+ion-app .item ion-icon,
+ion-app .item-inner ion-icon {
+    min-height: 1rem;
+}
+
+ion-app .item,
+ion-app .item-ios {
+    font-size: 1.6rem;
+    background: none;
+}
+
+ion-app .item ion-icon {
+    font-size: 2.6rem;
+}
+
+ion-app ion-thumbnail,
+ion-app .item ion-thumbnail {
+    min-width: 90px;
+    min-height: 90px;
+}
+
+ion-app ion-thumbnail img,
+ion-app .item ion-thumbnail img {
+    width: auto;
+    height: auto;
+}
+
+ion-app .toast-cus .toast-wrapper {
+    margin-bottom: 90px !important;
+    padding: 0px !important;
+}
+
+ion-app .toast-cus .toast-message {
+    font-weight: normal;
+}
+
+ion-app .cbtn {
+    -webkit-box-shadow: 0 0 0 0;
+    box-shadow: 0 0 0 0;
+    border-radius: 4px;
+    border: 1px solid #ed7135;
+    height: 44px !important;
+    width: 280px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    align-items: center;
+    vertical-align: middle;
+    background-color: #ed7135 !important;
+    font-size: 14px !important;
+}
+
+ion-app .cbtn * {
+    display: inline-block;
+    height: 1.0rem;
+    line-height: 1.0rem;
+    vertical-align: middle;
+}
+
+ion-app .cbtn[small] {
+    height: 18px;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    padding: 0 0.8rem;
+    color: #fff;
+}
+
+ion-app .cbtn.activated {
+    background-color: #ed7135;
+}
+
+ion-app .button:hover:not(.disable-hover) {
+    background-color: #fff;
+}
+
+
+/**不可点击按钮**/
+
+ion-app .cbtn2 {
+    -webkit-box-shadow: 0 0 0 0;
+    box-shadow: 0 0 0 0;
+    border-radius: 4px;
+    height: 44px;
+    width: 280px;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    background-color: #999999 !important;
+}
+
+ion-app .cbtn2 * {
+    display: inline-block;
+    height: 1.0rem;
+    line-height: 1.0rem;
+    vertical-align: middle;
+}
+
+ion-app .cbtn2[small] {
+    height: 18px;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    padding: 0 0.8rem;
+    color: #fff;
+}
+
+ion-app .cbtn2.activated {
+    background-color: #999999;
+}
+
+
+/****弹出****/
+
+ion-app .alert-title {
+    color: #3d3e3f;
+}
+
+.alert-md [aria-checked="true"] .alert-radio-icon {
+    border-color: #ed7135 !important;
+}
+
+.alert-md .alert-radio-inner {
+    background-color: #ed7135 !important;
+}
+
+.alert-md [aria-checked="true"] .alert-radio-inner {
+    border-color: #ed7135 !important;
+}
+
+.alert-md .alert-button {
+    color: #3d3e3f !important;
+}
+
+.alert-md .alert-radio-label {
+    color: #000 !important;
+}
+
+.alert-ios [aria-checked="true"] .alert-radio-icon {
+    border-color: #ed7135 !important;
+}
+
+.alert-ios .alert-radio-inner {
+    background-color: #ed7135 !important;
+}
+
+.alert-ios [aria-checked="true"] .alert-radio-inner {
+    border-color: #ed7135 !important;
+}
+
+.alert-ios .alert-button {
+    color: #3d3e3f !important;
+}
+
+.alert-ios .alert-radio-label {
+    color: #000 !important;
+}
+
+.toggle.toggle-checked .toggle-icon {
+    background-color: #ed7135 !important;
+}
+
+
+/**** item最小高度为0  不为4.4rem ****/
+
+ion-app .item-block {
+    min-height: 0rem !important;
+}
+
+
+/**** 输入框样式基础 ****/
+
+ion-app .text-input {
+    font-size: 14px !important;
+    font-weight: bold !important;
+}
+
+ion-app input::-webkit-input-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+ion-app input:-moz-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+ion-app input::-moz-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+ion-app input:-ms-input-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+ion-app textarea::-webkit-input-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+ion-app textarea:-moz-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+ion-app textarea::-moz-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+ion-app textarea:-ms-input-placeholder {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+/**** 通用简单样式小件 ****/
+
+.no-result {
+    text-align: center;
+    color: gray;
+    padding: 20px 16px;
+}
+
+.word-wrap {
+    word-wrap: break-word !important;
+    white-space: normal !important;
+    overflow: hidden;
+}
+
+.word-nowrap {
+    display: block;
+    word-wrap: normal !important;
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.red {
+    color: #ED1C24 !important;
+}
+
+.gray {
+    color: gray !important;
+}
+
+.green {
+    color: green !important;
+}
+
+.blue {
+    color: #2260A8 !important;
+}
+
+.orange {
+    color: orange !important;
+}
+
+.b {
+    font-weight: bold;
+}
+
+.page-flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+}
+
+.page-flex__item {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.vcenter {
+    align-items: center;
+    justify-content: center;
+}
+
+.iblock {
+    display: inline-block;
+}
+
+.irel {
+    position: relative;
+}
+
+
+/*********推荐标签*************/
+
+.tag-special,
+.tag-recommend {
+    display: inline-block;
+    text-align: center;
+    background-color: #f53d3d;
+    color: white;
+    margin-right: 3px;
+    border-radius: 2px;
+    line-height: 1.4rem;
+    height: 1.4rem;
+    padding: 0 0.4rem;
+}
+
+.tag-special {
+    background-color: #FFD944;
+    color: #f53d3d;
+}
+
+.tag-money {
+    color: #f53d3d !important;
+}
+
+.item-tag {
+    min-height: 1.4rem;
+}
+
+.txt-normal {
+    color: #333 !important;
+}
+
+.selectable {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.selectall {
+    -webkit-user-select: all;
+    -moz-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
+}
+
+ion-note {
+    max-width: 62%;
+}
+
+
+/******* 下拉选框 *******/
+
+.select-popover {}
+
+.select-popover .list {
+    margin: 8px !important;
+}
+
+
+/******** 自定义结束 **********/

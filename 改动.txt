@@ -1,0 +1,29 @@
+钱包, 资产 (*)
+
+版本号
+.63"
+.10"
+
+= 63;
+= 10;
+
+替换imgs/logo, qrcode, logo
+删除tab标
+
+//var debugUrl = "http://localhost/allways.gold.site/public";   //本地
+//var releaseUrl = "http://gold.jiankl.com:8337";
+var debugUrl = "http://localhost/ag.yichixing.net/public";
+var releaseUrl = "http://ag.yichixing.net";
+
+323F4A
+323F4A
+323F4A
+323F4A
+ = 323F4A
+
+3F4F5C
+3F4F5C
+ = 3F4F5C
+ 
+F7C200
+ = F7C200

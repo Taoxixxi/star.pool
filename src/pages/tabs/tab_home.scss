@@ -1,0 +1,48 @@
+ion-app page-tabs-tab_home {
+   .first-bg{
+    background: linear-gradient(#8d95fd, #1f35bb); 
+    height: 212px;
+   }
+   .duankou{
+    color: #eae7e7;
+    font-size: 16px;
+    letter-spacing: 2px;
+   }
+   .duan-name{
+    color: #656363;
+    width: 39%;
+    height: 23px;
+    border-radius: 13px;
+   }
+   .card{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 80%;
+        min-height: 150px;
+        box-shadow: 2px 3px 1px #ccc;
+        margin: auto;
+        border-radius: 15px;
+        letter-spacing: 1px;
+   }
+   .card div{
+       width: 45%;
+   }
+   .card-left{
+        color: #515FE0;
+        border-right: 1px solid #ccc;
+   }
+   .card-left h3{
+    margin-top: 0;
+}
+   .card-right h5{
+       color: #0FC67A;
+       margin-top: 0;
+   }
+   .card-right p{
+   margin-bottom: 0;
+}
+   .card-in .card-right h5{
+    color: #F96D66;
+}
+}

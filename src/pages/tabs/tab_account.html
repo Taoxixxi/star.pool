@@ -1,0 +1,146 @@
+<ion-header>
+    <ion-navbar>
+        <div class="top-title">我的</div>
+        <ion-buttons end>
+            <button ion-button class="top-btn" (click)="mySet()">
+                <i class="icon iconfont icon-shezhi"></i>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content class="icontent">
+    <ion-refresher (ionRefresh)="refreshPage($event)" pullMax="100" pullMin="80">
+        <ion-refresher-content pullingText="下拉刷新" refreshingText="数据更新中...">
+        </ion-refresher-content>
+    </ion-refresher>
+    <div class="iheader irel" *ngIf="isLogin">
+        <ion-row align-items-center>
+            <ion-col>
+                <div class="iheader-img">
+                    <img src="assets/imgs/person.png">
+                </div>
+            </ion-col>
+            <ion-col text-center col-auto>
+                <div class="iheader-name">
+                    {{sess.name}}
+                </div>
+                <div class="iheader-id">
+                    ID：{{sess.ouid}}
+                </div>
+            </ion-col>
+        </ion-row>
+    </div>
+    <div class="iheader1 irel" *ngIf="!isLogin">
+        <div class="iheader-box1">
+            <div class="vcenter">
+                <div class="iheader-img1" *ngIf="!data.loginUser">
+                    <img [src]="data.defAvatar">
+                </div>
+                <div class="iheader-img1" *ngIf="data.loginUser">
+                    <img [src]="data.loginUser.avatar_url ? data.loginUser.avatar_url : data.defAvatar1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!isLogin">
+        <div class="iheader-boxin1">
+            <ion-row align-items-center>
+                <ion-col text-center (click)="login()" class="iheader-boxin1-l">登录</ion-col>
+                <ion-col text-center (click)="register()" class="iheader-boxin1-r">注册</ion-col>
+            </ion-row>
+        </div>
+    </div>
+
+    <div *ngIf="isLogin">
+        <ion-row align-items-center class="account-aw-row">
+            <ion-col class="account-aw-title">
+                链财通 - 账户
+            </ion-col>
+        </ion-row>
+        <div class="account-charge">
+            <ion-row align-items-center class="account-aw-value">
+                <ion-col col-5 text-center>
+                    <div class="btom">
+                        SEC总额
+                    </div>
+                    <div class="c3">
+                        {{account_all(sess)}}
+                    </div>
+                </ion-col>
+                <ion-col col-7 text-left class="box1">
+                    <div class="btom">
+                        活跃值<span class="c1">： {{account_unlock(sess)}}</span>
+                    </div>
+                    <div>
+                        算力值<span class="c2">： {{account_lock(sess)}}</span>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+        <ion-row align-items-center class="account-aw-row">
+            <ion-col class="account-aw-title">
+                链财通 - 算池
+            </ion-col>
+        </ion-row>
+        <div class="inlist1">
+            <ion-row align-items-center class="ll1">
+                <ion-col align-self-center (click)="myLinkforce()" tappable>
+                    <ion-row align-items-center>
+                        <ion-col text-center>
+                            <i class="icon iconfont icon-lianjiesuanli2 color-icon"></i>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row align-items-center>
+                        <ion-col text-center class="msg">算池</ion-col>
+                    </ion-row>
+                </ion-col>
+                <ion-col align-self-center (click)="toRoad()" tappable>
+                    <ion-row align-items-center>
+                        <ion-col text-center>
+                            <i class="iconfont icon-suanlizhuanhuan color-icon1"></i>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row align-items-center>
+                        <ion-col text-center class="msg">转换通道</ion-col>
+                    </ion-row>
+                </ion-col>
+                <ion-col align-self-center (click)="myMember()" tappable>
+                    <ion-row align-items-center>
+                        <ion-col text-center>
+                            <i class="iconfont icon-wodeduiyuan2 color-icon2"></i>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row align-items-center>
+                        <ion-col text-center class="msg">我的队员</ion-col>
+                    </ion-row>
+                </ion-col>
+                <ion-col align-self-center (click)="myAwlist()" tappable>
+                    <ion-row align-items-center>
+                        <ion-col text-center>
+                            <i class="iconfont icon-zhanghujilu color-icon1"></i>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row align-items-center>
+                        <ion-col text-center class="msg">明细</ion-col>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+    <div class="ibody">
+        <div *ngIf="isLogin">
+            <ion-row (click)="myShare()">
+                <i class="icon iconfont icon-wodefenxiang"></i>我的分享
+            </ion-row>
+            <ion-row (click)="myMeans()">
+                <i class="icon iconfont icon-yonghuziliao"></i>个人资料
+            </ion-row>
+        </div>
+        <ion-row (click)="myNews()">
+            <i class="icon iconfont icon-lishigonggao"></i>历史公告
+        </ion-row>
+        <ion-row (click)="myAnser()">
+            <i class="icon iconfont icon-changjianwenti"></i>常见问题解答
+        </ion-row>
+    </div>
+</ion-content>

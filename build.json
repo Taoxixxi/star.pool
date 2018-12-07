@@ -1,0 +1,10 @@
+{
+  "android": {
+    "release": {
+      "keystore": "release-key.keystore",
+      "alias": "tuan-webapp",
+      "storePassword": "tunCv792q3495",
+      "password": "tunCv792q3495"
+    }
+  }
+}

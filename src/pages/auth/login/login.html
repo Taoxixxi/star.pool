@@ -1,0 +1,49 @@
+<ion-header></ion-header>
+<ion-content padding class="ion-content">
+	<div class="logo">
+		<ion-slides autoplay="3000">
+			<ion-slide>
+				<img src="../../../assets/imgs/login.png">
+			</ion-slide>
+			<ion-slide>
+				<img src="../../../assets/imgs/login1.png">
+			</ion-slide>
+		</ion-slides>
+	</div>
+	<div class="out-div">
+		<div class="min-item">
+			<ion-segment [(ngModel)]="type" class="type-tool-bar">
+				<ion-segment-button value="person">登录</ion-segment-button>
+				<ion-segment-button value="er">注册</ion-segment-button>
+			</ion-segment>
+			<div [ngSwitch]="type">
+				<div *ngSwitchCase="'person'">
+					<ion-list class="ion-list">
+						<ion-item class="ion-item ion-item-top">
+							<ion-label stacked>用户名</ion-label>
+							<ion-input class="ion-input" type="text" value="" [(ngModel)]="form.username"></ion-input>
+						</ion-item>
+						<ion-item class="ion-item ion-item-last">
+							<ion-label stacked>密码</ion-label>
+							<ion-input class="ion-input-pwd" type="password" [(ngModel)]="form.password"></ion-input>
+						</ion-item>
+					</ion-list>
+					<div class="button-submit">
+						<button ion-button full class="sub-login" (click)="login()">Sign&nbsp;&nbsp;In</button>
+					</div>
+					<ion-row class="bottom-bar">
+						<!-- <ion-col class="lf" (click)="register()"><span class="other-link">新用户注册</span></ion-col> -->
+						<ion-col class="rt" (click)="forget()"><span class="other-link">忘记密码?</span></ion-col>
+					</ion-row>
+				</div>
+				<div *ngSwitchCase="'er'" class="er">
+					<h1>这是注册</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="slogen-div">
+		<img src="../../../assets/imgs/slogen.png">
+	</div>
+
+</ion-content>

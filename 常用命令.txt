@@ -1,0 +1,112 @@
+﻿git config --global core.longpaths true  
+
+获取签名: 解压APK
+keytool -printcert -file META-INF/CERT.RSA
+所有者: CN=Tuan, OU=Star Pool, O=Star Pool, L=Cheng Du, ST=Si Chuan, C=CN
+发布者: CN=Tuan, OU=Star Pool, O=Star Pool, L=Cheng Du, ST=Si Chuan, C=CN
+序列号: 6d2df50e
+有效期开始日期: Thu Nov 02 16:16:50 CST 2017, 截止日期: Mon Mar 20 16:16:50 CST 2045
+证书指纹:
+MD5: 37:E6:92:B3:5E:2C:E0:81:CB:D9:B0:BA:72:64:16:38
+SHA1: 5A:13:2F:87:0A:1A:58:31:D0:C7:06:00:6D:9D:E8:77:BB:1B:8C:8A
+SHA256: 79:8D:78:09:48:9B:2B:00:1B:A5:98:44:F2:B6:31:16:AB:B3:63:B1:4D:5F:7C:39:5F:C3:DF:9E:FB:42:FD:67
+签名算法名称: SHA256withRSA
+版本: 3
+
+
+Node NPM 的常用配置
+
+1. 修改 npm 下载模块的 保存地址
+　　<1>  进入 cmd 运行, 如下命令
+　　　　npm config set prefix "C:\Program File\Node\resources"
+　　　　npm config set cache "C:\Program File\Node\resources-cache"
+　　<2> 修改 PATH 里的环境变量路径为: 新地址
+2. 修改 下载仓库为淘宝镜像
+　 npm config set registry http://registry.npm.taobao.org/
+3. 如果要发布自己的镜像需要修改回来
+　 npm config set registry https://registry.npmjs.org/
+
+cnpm view ionic versions
+cnpm view cordova versions
+
+//安装cnpm: 
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+//进入项目目录, 用户cnpm来添加./node_modules
+
+npm config set registry https://registry.npm.taobao.org
+
+cnpm remove -g ionic cordova
+//这句很重要 ionic和ecordova版本安装不对后面不管安装啥都各种错误
+cnpm install -g ionic@4.0.2 cordova@7.1.0
+
+ionic serve
+
+生成release版
+ionic cordova build android --release --prod
+ionic cordova build ios --release --prod
+
+//================ 开始安装 ================
+//除非超时错误否则尽量不要使用cnpm, 容易出现依赖错误
+npm i
+
+//这个版本号也很重要
+ionic cordova platform add android@6.3.0
+ionic cordova platform add ios
+
+
+//这次的config.xml里面实际所以组件已经有了， 下面的都重安一次不重安都行
+//没出错 直接执行--prod命令也行
+
+//安装相册
+ionic cordova plugin add cordova-plugin-telerik-imagepicker --variable PHOTO_LIBRARY_USAGE_DESCRIPTION="相册"
+npm install --save @ionic-native/image-picker
+
+添加相机
+ionic cordova plugin add cordova-plugin-camera
+npm install --save @ionic-native/camera
+
+
+添加自动更新组件
+ionic cordova plugin add cordova-plugin-app-update
+npm install --save @ionic-native/app-update
+
+安装外部浏览器显示插件
+ionic cordova plugin add cordova-plugin-inappbrowser
+npm install --save @ionic-native/in-app-browser
+
+安装地址联动
+npm install ion-multi-picker --save
+
+二维码扫码
+ionic cordova plugin add phonegap-plugin-barcodescanner --variable CAMERA_USAGE_DESCRIPTION="Scan Barcodes"
+npm install --save @ionic-native/barcode-scanner
+
+
+状态栏设置
+cordova plugin add cordova-plugin-statusbar
+
+安装设备
+ionic cordova plugin add cordova-plugin-device
+npm install --save @ionic-native/device
+
+添加crypto模块
+npm install crypto-js
+
+内容下载
+cnpm i rxjs
+cordova plugin add cordova-plugin-file-downloader
+cnpm i cordova-plugin-file-downloader
+
+二维码生成
+npm install angularx-qrcode --save
+
+大数计算
+npm install --save bignumber.js
+
+错误:
+FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory
+
+修改node_modules/.bin/ionic-app-scripts.cmd
+加入--max_old_space_size=8192
+"%~dp0\node.exe" --max_old_space_size=8192  "%~dp0\.
+node --max_old_space_size=8192  "%~dp0\..\_

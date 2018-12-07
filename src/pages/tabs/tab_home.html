@@ -1,0 +1,52 @@
+<ion-header>
+    <!-- <ion-navbar>
+        <div class="top-title">首页</div>
+        <ion-buttons end>
+            <button ion-button class="top-btn" (click)="toSelect()">
+                <i class="icon iconfont icon-gaojisousuo"></i>
+            </button>
+        </ion-buttons>
+    </ion-navbar> -->
+</ion-header>
+<ion-content class="icontent">
+    <ion-refresher (ionRefresh)="refreshPage($event)" pullMax="100" pullMin="80">
+        <ion-refresher-content pullingText="下拉刷新" refreshingText="数据更新中...">
+        </ion-refresher-content>
+    </ion-refresher>
+    <div class="box">
+        <div class="first-bg">
+            <ion-row align-items-center>
+                <ion-col col-6 text-center>
+                    <p class="duankou">当前端口</p>
+                    <button class="duan-name">lsftt</button>
+                </ion-col>
+                <ion-col col-6 text-center> <img src="../../assets/imgs/login.png"></ion-col>
+            </ion-row>
+        </div>
+        <div>
+            <div class="card card-out">
+                <div class="card-left">
+                    <h3>星能点数</h3>
+                    <p>500000</p>
+                </div>
+                <div class="card-right">
+                    <h5>预计收获</h5>
+                    <p><span>1000</span>/hour</p>
+                    <p><span>2000</span>/day</p>
+                </div>
+            </div>
+            <div class="card card-in">
+                <div class="card-left">
+                    <h3>星能点数</h3>
+                    <p>500000</p>
+                </div>
+                <div class="card-right">
+                    <h5>预计消耗</h5>
+                    <p><span>1000</span>/hour</p>
+                    <p><span>2000</span>/day</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</ion-content>
